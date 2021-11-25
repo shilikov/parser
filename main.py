@@ -6,18 +6,14 @@ import time
 from pprint import pprint
 
 URL = 'https://habr.com/ru/all/'
-
 KEYWORDS = {'Game development', '.NET', 'DevOps', 'Python', 'Пайтон'}
 PARSER = 'html.parser'
-#
+
 response = requests.get(url=URL)
 response.raise_for_status()
-print(response)
-
 soup = BeautifulSoup(response.text, features=PARSER)
 articles_ = soup.find_all('article')
-print(len(articles_))
-# text_links = []
+
 
 
 def finders():
