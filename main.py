@@ -25,32 +25,6 @@ def finders():
 
         hubs = atisles.find_all('span', class_="tm-article-snippet__hubs-item")
         hubs = set([hub.find('span').text for hub in hubs])
-        # print(hubs)
-    
-    
-        # public_date = atisles.find('span', class_='tm-article-snippet__datetime-published').text
-        # # preview = atisles.find('div', class_='post__text').text
-        # link = atisles.find('a', class_="tm-article-snippet__title-link").get('href')
-        # headlines = atisles.find('tm-article-snippet__title tm-article-snippet__title_h2')
-        # post_preview_text = atisles.div.div.text
-        # headline = atisles.h2.a.text
-        # owners = atisles.find('a', class_='tm-user-info__username').text
-        # owner_link = atisles.find('a', class_='tm-user-info__username').get('href')
-
-        # owners1 = atisles.find('a', class_='tm-article-snippet__hubs-item-link').text
-        # owner_link1 = atisles.find('a', class_='tm-article-snippet__hubs-item-link').get('href')
-        # text_ = atisles.find('div', class_='tm-article-body tm-article-snippet__lead').text
-
-
-        # header = atisles.find('h2').text
-        # print('=' * 33)
-        # print(header)
-        # print(f'{owners} - {URL+owner_link}')
-        # print(f'{owners1} - {URL + owner_link1}')
-        # print(public_date)
-        # print(URL+link)
-        # pprint(f'{text_}')
-        # print(hubs)
         for serh_world in KEYWORDS:
             if serh_world in hubs:
                 header = atisles.find('h2').text
@@ -64,17 +38,6 @@ def finders():
                 owners1 = atisles.find('a', class_='tm-article-snippet__hubs-item-link').text
                 owner_link1 = atisles.find('a', class_='tm-article-snippet__hubs-item-link').get('href')
                 text_ = atisles.find('div', class_='tm-article-body tm-article-snippet__lead').text
-                #
-                print('=' * 33)
-                print(header)
-                print(f'{owners} - {URL + owner_link}')
-                print(f'{owners1} - {URL + owner_link1}')
-                print(public_date)
-                print(URL + link)
-                pprint(f'{text_}')
-                print(hubs)
-                print('|' * 33)
-                print(f'{header}, \n {public_date}, \n {URL + link}')
                 if serh_world in "".join(text_.split()):
                     header = atisles.find('h2').text
                     text_ = atisles.find('div', class_='tm-article-body tm-article-snippet__lead').text
@@ -107,7 +70,7 @@ def finder2():
                             print('*' * 33)
                             print(texts_post_)
 
-# finder2()
+finder2()
 
 
 
